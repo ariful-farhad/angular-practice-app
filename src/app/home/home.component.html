@@ -1,3 +1,8 @@
 <p>home works!</p>
 <!-- <app-greeting [message]="'hellow world 1 2 3 4'" /> -->
 <app-greeting [message]="home_message()" />
+<app-counter></app-counter>
+<input type="text" (keyup)="keyUpHandler()" />
+<button (click)="sayHello()">Click Me</button>
+<div (mouseover)="onMouseOver($event)">Hover Over Me</div>
+<input type="text" (keyup)="keyUpHandlerEvent($event)" />
