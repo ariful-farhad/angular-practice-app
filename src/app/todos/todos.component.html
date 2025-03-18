@@ -8,12 +8,32 @@
 <p>{{ item.title }}</p>
 } -->
 
-<h3>Todos list</h3>
+<!-- http call made -->
+<!-- <h3>Todos list</h3>
+
 <ul class="todos">
   @for (item of todoItems(); track item.id) {
   <li class="todos__item">
     <input id="todo-{{ item.id }}" type="checkbox" [value]="item.completed" />
     <label for="todo-{{ item.id }}">{{ item.title }}</label>
   </li>
+  }
+</ul> -->
+
+<!-- using directives -->
+<h3>Todos list</h3>
+<p *ngIf="!todoItems().length">Loading...........</p>
+<!-- alternative of the above line -->
+@if (!todoItems().length) {
+<p>Loading ..............</p>
+}
+
+<ul class="todos">
+  @for (item of todoItems(); track item.id) {
+  <app-todo-item
+    (todoToggled)="updateTodoItem($event)"
+    [item]="item"
+  ></app-todo-item>
+
   }
 </ul>
