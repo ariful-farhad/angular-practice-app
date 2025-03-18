@@ -1,9 +1,19 @@
-<p>todos works!</p>
+<!-- <p>todos works!</p> -->
 <!-- <p>{{ todoService.todoItems[0].title }}</p> -->
 
-<p>{{ todoItems()[0].title }}</p>
+<!-- <p>{{ todoItems()[0].title }}</p> -->
 <!-- to loop all the items -->
 <!-- @for (item of todoItems(); track $index) { we will track item.id as they are unique -->
-@for (item of todoItems(); track item.id) {
+<!-- @for (item of todoItems(); track item.id) {
 <p>{{ item.title }}</p>
-}
+} -->
+
+<h3>Todos list</h3>
+<ul class="todos">
+  @for (item of todoItems(); track item.id) {
+  <li class="todos__item">
+    <input id="todo-{{ item.id }}" type="checkbox" [value]="item.completed" />
+    <label for="todo-{{ item.id }}">{{ item.title }}</label>
+  </li>
+  }
+</ul>
