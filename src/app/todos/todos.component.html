@@ -1,1 +1,9 @@
 <p>todos works!</p>
+<!-- <p>{{ todoService.todoItems[0].title }}</p> -->
+
+<p>{{ todoItems()[0].title }}</p>
+<!-- to loop all the items -->
+<!-- @for (item of todoItems(); track $index) { we will track item.id as they are unique -->
+@for (item of todoItems(); track item.id) {
+<p>{{ item.title }}</p>
+}

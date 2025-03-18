@@ -9,7 +9,7 @@ import { CounterComponent } from '../components/counter/counter.component';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  home_message = signal('this is the home message going through singnal');
+  home_message = signal('this is the home message going through signal');
   keyUpHandler() {
     console.log('I typed something in the input');
   }

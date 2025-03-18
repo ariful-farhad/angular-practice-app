@@ -9,4 +9,10 @@ export const routes: Routes = [
       return import('./home/home.component').then((m) => m.HomeComponent);
     },
   },
+  {
+    path: 'todos',
+    loadComponent: () => {
+      return import('./todos/todos.component').then((m) => m.TodosComponent);
+    },
+  },
 ];
