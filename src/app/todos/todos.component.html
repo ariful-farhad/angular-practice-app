@@ -28,8 +28,20 @@
 <p>Loading ..............</p>
 }
 
+<!-- toway data binding with ngModel from FromModule -->
+<form>
+  <label> Filter Todos </label>
+  <input
+    name="searchTerm"
+    [(ngModel)]="searchTerm"
+    placeholder="Search todos..."
+  />
+  <p>you entered {{ searchTerm() }}</p>
+</form>
+
 <ul class="todos">
-  @for (item of todoItems(); track item.id) {
+  <!-- applied pipe, don't need the first arguement, automatically takes the array, second arguement is needed -->
+  @for (item of todoItems() | filterTodos: searchTerm(); track item.id) {
   <app-todo-item
     (todoToggled)="updateTodoItem($event)"
     [item]="item"
